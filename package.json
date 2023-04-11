@@ -6,8 +6,10 @@
   "license": "UNLICENSED",
   "private": true,
   "scripts": {
-    "test": "live-server --open=./SpecRunner.html --port=8081"
+    "test": "live-server --open=./SpecRunner.html --port=8081",
+    "dev":"npx babel . --watch --out-dir=compiled --presets=@babel/preset-react --ignore=node_modules,compiled --source-maps=inline & npm run test"
   },
+
   "dependencies": {
     "bootstrap": "^4.5.3",
     "jquery": "^3.5.1 ",

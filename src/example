@@ -1,0 +1,28 @@
+// Grocery
+const { useState } = React;
+const GroceryListItem = (props) => {
+  const [isDone, setIsDone] = useState(false);
+  const style = {
+    textDecoration: isDone ? 'line-through' : 'none'
+  };
+  return (
+    <li style={style} onClick={() => setIsDone(!isDone)}>
+      {props.item}
+    </li>
+  );
+};
+
+const GroceryList = (props) => (
+  <ul>
+    {props.items.map((item) => (
+      <GroceryListItem item={item} />
+    ))}
+  </ul>
+);
+const App = () => (
+<div><h2>Grocery List</h2>
+<GroceryList items={['salmon', 'tuna', 'shrimp']}/>
+  </div>
+);
+
+ReactDOM.render(<App />, document.getElementById("app"));
