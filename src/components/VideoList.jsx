@@ -6,9 +6,10 @@ var VideoList = (props) => {
   return (
     <div className="video-list">
       {props.videos.map((video, index) => (
-        <VideoListEntry video={video} key = {index} />
+        <VideoListEntry video={video} key={index} onClick={props.onClick} />
       ))}
-    </div>);
+    </div>
+  );
 };
 
 // PropTypes tell other developers what `props` a component expects
