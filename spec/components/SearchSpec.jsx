@@ -23,7 +23,7 @@ describe('Search', function () {
       );
     });
 
-    it.only('should load live data when app is initialized', function () {
+    it('should load live data when app is initialized', function () {
       var videoEntryTitleElements = scryRenderedDOMComponentsWithClass(
         app,
         'video-list-entry-title'

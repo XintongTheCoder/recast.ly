@@ -7,16 +7,25 @@ import searchYouTube from '../lib/searchYouTube.js';
 const { useState } = React;
 
 var App = (props) => {
-  const [videos, setVideos] = useState(exampleVideoData);
-  const [currentVideo, setCurrentVideo] = useState(videos[0]);
+  const handleSubmission = (data) => {
+    setVideos(data);
+  };
+  var startData;
+
+  // searchYouTube('', (data) => {
+  //   console.log('DATA: ', data);
+  //   startData = data.slice(0, 5);
+  //   console.log('###', startData);
+  // });
+
+  console.log('###');
+  const [videos, setVideos] = useState([]);
+  const [currentVideo, setCurrentVideo] = useState(exampleVideoData[0]);
   const getClick = (video) => {
     console.log('click');
     setCurrentVideo(video);
   };
 
-  const handleSubmission = (data) => {
-    setVideos(data);
-  };
   console.log(
     'search youtube',
     searchYouTube('', (data) => {
